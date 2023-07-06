@@ -1,4 +1,4 @@
-  .MODEL SMALL
+.MODEL SMALL
 
 .STACK 100H
 
@@ -23,7 +23,7 @@ MAIN PROC
         INT 21H
         CMP AL, 0DH
         JE END_INPUT
-        MOV INPUT+SI, AL
+        MOV INPUT[SI], AL
         INC SI
         JMP START_INPUT
     
@@ -52,9 +52,9 @@ MAIN PROC
             JMP CHECK
             
             UPDATE:
-                MOV MAX, CX
+                MOV MAX, CX               
                 MOV BX, SI
-                SUB BX, CX
+                SUB BX, CX               
                 MOV INDEX, BX  
                 JMP CHECK_MAX
                 
@@ -67,7 +67,7 @@ MAIN PROC
     LAST_UPDATE:
         MOV MAX, CX
         MOV BX, SI
-        SUB BX, CX
+        SUB BX, CX 
         MOV INDEX, BX  
      
     EXIT:   
@@ -85,15 +85,15 @@ MAIN PROC
         INT 21H
         
         MOV SI, INDEX 
-        INC SI
+        INC SI          
         MOV CX, MAX         
         MOV AH, 2       
         
-        SEQ_OUTPUT:  
+        SEQ_PRINT:  
             MOV DL, INPUT[SI]
             INT 21H
             INC SI
-            LOOP SEQ_OUTPUT
+            LOOP SEQ_PRINT
         
 END MAIN
         
