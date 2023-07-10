@@ -11,7 +11,7 @@ INPUT DB 50 DUP('$')
 
 MAIN PROC
 
-    MOV AX, DATA
+    MOV AX, @DATA
     MOV DS, AX        
         
     MOV SI, 0 

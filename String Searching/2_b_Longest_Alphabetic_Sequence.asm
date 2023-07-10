@@ -13,7 +13,7 @@ INDEX DW 0
 
 MAIN PROC
 
-    MOV AX, DATA
+    MOV AX, @DATA
     MOV DS, AX
     
     MOV SI, 0

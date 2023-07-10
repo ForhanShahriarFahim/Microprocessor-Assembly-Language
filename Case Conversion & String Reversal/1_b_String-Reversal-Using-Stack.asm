@@ -10,7 +10,7 @@ NEWLINE DB 0AH,0DH,'$'
 
 MAIN PROC   
     
-    MOV AX, DATA
+    MOV AX, @DATA
     MOV DS, AX
     
     MOV CX, 0
